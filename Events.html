@@ -21,7 +21,23 @@
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+      function readMore(city) {
+    let dots = document.querySelector(`.post-entry[data-city="${city}"] .dots`);
+    let moreText = document.querySelector(`.post-entry[data-city="${city}"] .more`); 
+    let btnText = document.querySelector(`.post-entry[data-city="${city}"] .myBtn`);
 
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.textContent = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.textContent = "Read less"; 
+        moreText.style.display = "inline";
+    }
+}
+    </script>
   </head>
   <body>
     
@@ -48,14 +64,13 @@
     </nav>
   <!-- END nav -->
   
-  
   <div class="block-31" style="position: relative;">
     <div class="owl-carousel loop-block-31 ">
-      <div class="block-30 block-30-sm item" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+      <div class="block-30 block-30-sm item" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
         <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-md-7 text-center">
-              <h2 class="heading">About The Organization</h2>
+          <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-7">
+              <h2 class="heading mb-5">Our Events</h2>
             </div>
           </div>
         </div>
@@ -63,83 +78,93 @@
       
     </div>
   </div>
-      
-      <div class="row mt-5">
-        <div class="col-md-12 mb-5 text-center mt-5">
-          <h2>Leadership</h2>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="block-38 text-center">
-            <div class="block-38-img">
-              <div class="block-38-header">
-                <img src="images/person_1.jpg" alt="Image placeholder">
-                <h3 class="block-38-heading">Chandrakala.N</h3>
-                <p class="block-38-subheading">President</p>
-              </div>
-              <div class="block-38-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="block-38 text-center">
-            <div class="block-38-img">
-              <div class="block-38-header">
-                <img src="images/person_2.jpg" alt="Image placeholder">
-                <h3 class="block-38-heading">Hema.R</h3>
-                <p class="block-38-subheading">Secretary</p>
-              </div>
-              <div class="block-38-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="block-38 text-center">
-            <div class="block-38-img">
-              <div class="block-38-header">
-                <img src="images/person_3.jpg" alt="Image placeholder">
-                <h3 class="block-38-heading">Saleem Basha</h3>
-                <p class="block-38-subheading">Vice- President</p>
-              </div>
-              <div class="block-38-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="block-38 text-center">
-            <div class="block-38-img">
-              <div class="block-38-header">
-                <img src="images/person_4.jpg" alt="Image placeholder">
-                <h3 class="block-38-heading">Preethi.A</h3>
-                <p class="block-38-subheading">Treasurer</p>
-              </div>
-              <div class="block-38-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="site-section">
+  
+  
+  <div class="site-section bg-light">
     <div class="container">
-      <div class="block-31 mb-5" style="position: relative;">
-          <div class="owl-carousel loop-block-31">
-            <div class="block-30 no-overlay item" style="background-image: url('images/bg_2.jpg');"></div>
-            <div class="block-30 no-overlay item" style="background-image: url('images/bg_1.jpg');"></div>
-            <div class="block-30 no-overlay item" style="background-image: url('images/bg_3.jpg');"></div>
+      
+
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="post-entry" data-city="event1">
+            <a href="blog-single.html" class="mb-3 img-wrap">
+              <img src="images/event_1.jpeg" alt="Image placeholder" class="img-fluid" id="environmentalday">
+            </a>
+            <h3>World environmental day</h3>
+            <!-- <span class="date mb-4 d-block text-muted">July 26, 2018</span> -->
+            <p>Our World Environment Day celebration on June 05th it  is an opportunity to come together, raise awareness, and take action for a greener, more sustainable planet.<span class="dots">..</span>
+              <span class="more" style="display: none;">Through eco-friendly activities, discussions, and community engagement, we emphasize the importance of environmental stewardship on occasion of world environmental day Spoorthi conducts drawing competition on theme save tree.</span></p>
+            <p>
+              <button onclick="readMore('event1')" class="myBtn">Read more</button></p>
+             
           </div>
         </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="post-entry" data-city="event2">
+            <a href="blog-single.html" class="mb-3 img-wrap">
+              <img src="images/event_2.jpeg" alt="Image placeholder" class="img-fluid">
+            </a>
+            <h3>Independence day</h3>
+            <!-- <span class="date mb-4 d-block text-muted">July 26, 2018</span> -->
+            <p>Spoorthi Foundation celebrated Independence Day with great energy and enthusiasm our children perform different dances the event marked by patriotic song<span class="dots">...</span>
+              <span class="more" style="display: none;"> and significance of independence day.</span></p>
+            <p><button onclick="readMore('event2')" class="myBtn">Read more</button></p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="post-entry" data-city="event3">
+            <a href="blog-single.html" class="mb-3 img-wrap">
+              <img src="images/event_3.jpeg" alt="Image placeholder" class="img-fluid">
+            </a>
+            <h3>Teachers day</h3>
+            <!-- <span class="date mb-4 d-block text-muted">July 26, 2018</span> -->
+            <p>Spoorthi foundation celebrate this day on their own to show respect to the honourable teachers who teach to give a better life. Through heartfelt tributes, meaningful activities,<span class="dots">...</span>
+              <span class="more" style="display: none;"> and expressions of admiration.</span></p>
+            <p>   <button onclick="readMore('event3')" class="myBtn">Read more</button></p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="post-entry" data-city="event4">
+            <a href="blog-single.html" class="mb-3 img-wrap">
+              <img src="images/event_4.png" alt="Image placeholder" class="img-fluid">
+            </a>
+            <h3>Kannada rajyostava</h3>
+            <!-- <span class="date mb-4 d-block text-muted">July 26, 2018</span> -->
+            <p>Kannada Rajoytsava celebrated on 2nd November. Significance and importance
+              shared by teachers and students,<span class="dots">...</span>
+              <span class="more" style="display: none;"> Spoorthi conducted colouring activity.</span></p>
+            <p><button onclick="readMore('event4')" class="myBtn">Read more</button></p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="post-entry" data-city="event5">
+            <a href="blog-single.html" class="mb-3 img-wrap">
+              <img src="images/event_5.jpeg" alt="Image placeholder" class="img-fluid">
+            </a>
+            <h3>Saturday's activities</h3>
+            <!-- <span class="date mb-4 d-block text-muted">July 26, 2018</span> -->
+            <p>Spoorthi conduct bagless day on every Saturday and will conduct activities like skit, poetry recitation, fire less cooking art & craft etc<span class="dots">...</span>
+              <span class="more" style="display: none;">, which helps to raise the student's ability   in co-operation, co- ordination, organization  and leads towards leadership.</span></p>
+            <p><button onclick="readMore('event5')" class="myBtn">Read more</button></p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="post-entry" data-city="event6">
+            <a href="blog-single.html" class="mb-3 img-wrap">
+              <img src="images/event_6.jpeg" alt="Image placeholder" class="img-fluid">
+            </a>
+            <h3>Yoga Day</h3>
+            <!-- <span class="date mb-4 d-block text-muted">July 26, 2018</span> -->
+            <p>Spoorthi conduct Yoga day to Teach the Children about importance of Yoga and health.<span class="dots">...</span>
+              <span class="more" style="display: none;"></span></p>
+            <p><button onclick="readMore('event6')" class="myBtn">Read more</button></p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </div> <!-- .section -->
+
 
   <footer class="footer">
     <div class="container">
@@ -192,6 +217,7 @@
       </div>
     </div>
   </footer>
+
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
