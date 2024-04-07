@@ -21,6 +21,12 @@ body {
      margin: 20px;
       
 }
+#navheader{
+  color: white;
+  width: 100%;
+  font-weight: 900;
+  font-size: 120%;
+}
 #more {display: none;}
 #tagline{
   font-size: 50px;
@@ -34,7 +40,7 @@ body {
   border-radius: 7px;
 }
 #foundationimg:hover{
-  scale: 1.03;
+  scale: 1.5;
   transition: ease-in-out 0.5s;
   border-radius: 7px;
 
