@@ -27,7 +27,7 @@
     
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <img src="images/logo1.png" alt="logo">
+        <img src="images/logo.jpg" alt="logo">
         <a class="navbar-brand" href="index.html" id="navheader">SPOORTHI FOUNDATION</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
@@ -37,9 +37,9 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="Activities.html" class="nav-link">Activities</a></li>
-            <li class="nav-item"><a href="donate.html" class="nav-link">Donate</a></li>
             <li class="nav-item"><a href="Events.html" class="nav-link">Events</a></li>
-            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>   
+            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="donate.html" class="nav-link">Donate</a></li>   
             <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
           </ul>
@@ -72,13 +72,11 @@
           <div class="block-38 text-center">
             <div class="block-38-img">
               <div class="block-38-header">
-                <img src="images/person_1.jpg" alt="Image placeholder">
-                <h3 class="block-38-heading">Chandrakala.N</h3>
+                <img src="images/p1_chandrakala.jpg" alt="Image placeholder">
+                <h3 class="block-38-heading">Chandrakala N</h3>
                 <p class="block-38-subheading">President</p>
               </div>
-              <div class="block-38-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -86,13 +84,11 @@
           <div class="block-38 text-center">
             <div class="block-38-img">
               <div class="block-38-header">
-                <img src="images/person_2.jpg" alt="Image placeholder">
-                <h3 class="block-38-heading">Hema.R</h3>
+                <img src="images/p2_hema.jpg" alt="Image placeholder">
+                <h3 class="block-38-heading">Hema R</h3>
                 <p class="block-38-subheading">Secretary</p>
               </div>
-              <div class="block-38-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -100,13 +96,11 @@
           <div class="block-38 text-center">
             <div class="block-38-img">
               <div class="block-38-header">
-                <img src="images/person_3.jpg" alt="Image placeholder">
+                <img src="images/p3_saleem.jpg" alt="Image placeholder">
                 <h3 class="block-38-heading">Saleem Basha</h3>
                 <p class="block-38-subheading">Vice- President</p>
               </div>
-              <div class="block-38-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -114,18 +108,27 @@
           <div class="block-38 text-center">
             <div class="block-38-img">
               <div class="block-38-header">
-                <img src="images/person_4.jpg" alt="Image placeholder">
-                <h3 class="block-38-heading">Preethi.A</h3>
+                <img src="images/p4_preethi.jpg" alt="Image placeholder">
+                <h3 class="block-38-heading">Preethi A</h3>
                 <p class="block-38-subheading">Treasurer</p>
               </div>
-              <div class="block-38-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
-              </div>
+             
             </div>
           </div>
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <div class="site-section">
+    <div class="container" id="idcontainer" >
+      <div class="block-31 mb-5" style="position: relative;" >
+        <button id="toggleButton" onclick="toggleImage()" class="btns">Show PAN card</button>
+        <button onclick="openPDF()" class="btns">Open Document</button>
+            <img src="images/ID_card.jpg" id="myImage" alt="my pan card">
+        
+        </div>
     </div>
   </div>
 
@@ -194,8 +197,35 @@
   </footer>
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
+  <script>
+    var img = document.getElementById("myImage");
+    var button = document.getElementById("toggleButton");
+    
+    function toggleImage() {
+      if (img.style.display === "none") {
+        img.style.display = "block";
+        button.innerHTML = "Hide PAN card";
+        // Schedule hiding of image after 1 minute
+        setTimeout(function() {
+          hideImage();
+        }, 60000); // 60000 milliseconds = 1 minute
+      } else {
+        hideImage();
+      }
+    }
+    
+    function hideImage() {
+      img.style.display = "none";
+      button.innerHTML = "Show PAN card";
+    }
+    </script>
+    
+    <script>
+      function openPDF() {
+        var pdfUrl = "images/80G.pdf";
+        window.open(pdfUrl, "_blank");
+      }
+      </script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
