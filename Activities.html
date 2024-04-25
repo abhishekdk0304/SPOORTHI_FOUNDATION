@@ -21,7 +21,18 @@
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <!-- Load EmailJS library script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script>
+      // Initialize EmailJS with your public key
+      (function () {
+        emailjs.init({
+          publicKey: "0IxXKpAlFmv6usOFq",
+        });
+      })();
+    </script>
+    <script src="js/email.js"> </script>  
   </head>
   <body>
     
@@ -192,22 +203,22 @@
           <div class="form-volunteer">
             
             <h2>Be A Volunteer Today</h2>
-            <form action="#" method="post">
+            <form onsubmit="sendMail(event)" method="post">
               <div class="form-group">
                 <!-- <label for="name">Name</label> -->
-                <input type="text" class="form-control py-2" id="name" placeholder="Enter your name">
+                <input type="text" class="form-control py-2" id="name" placeholder="Enter your name" pattern="[A-Za-z]+" title="Please enter only alphabetic characters"  required>
               </div>
               <div class="form-group">
                 <!-- <label for="email">Email</label> -->
-                <input type="text" class="form-control py-2" id="email" placeholder="Enter your email">
+                <input type="email" class="form-control py-2" id="email" placeholder="Enter your email" required>
               </div>
               <div class="form-group">
-                <!-- <label for="v_message">Email</label> -->
-                <textarea name="v_message" id="" cols="30" rows="3" class="form-control py-2" placeholder="Write your message"></textarea>
+                <!-- <label for="v_message">Email</label>name="v_message"  -->
+                <textarea  id="message" cols="30" rows="3" class="form-control py-2" placeholder="Write your message" type="text" required></textarea>
                 <!-- <input type="text" class="form-control py-2" id="email"> -->
               </div>
               <div class="form-group">
-                <input type="submit" class="btn btn-white px-5 py-2" value="Send">
+                <input type="submit" class="btn btn-white px-5 py-2" value="Send"  >
               </div>
             </form>
           </div>
@@ -216,8 +227,7 @@
       </div>
     </div>
 
-  </div> <!-- .featured-donate -->
-
+  </div> <!-- .volunteer -->
   
   <footer class="footer">
     <div class="container">
